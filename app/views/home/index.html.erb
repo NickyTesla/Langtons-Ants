@@ -1,0 +1,28 @@
+<canvas id="canvas"></canvas>
+
+<%= javascript_include_tag('pixels.js') %>
+
+<img class="slideout-menu-toggle" src="arrow.png" alt="" />
+<div class="slideout-menu">
+	<h3> Ants in the Ointment <a href="#" class="slideout-menu-close">×</a></h3>
+
+
+  <div class="content">
+    <p>
+      A modified application of Langton's Ants algorithm that swaps pixels
+      instead of coloring them.
+      <br>
+      <br>
+      <br>
+      'Cells' have two states: left and right.  Ants moving to a cell turn
+      90 degrees in the direction of the state of the cell and switch the state of
+      the cell.
+
+      <br>
+      <br>
+      <br>
+      Click to add ants.
+    </p>
+
+  </div>
+</div>

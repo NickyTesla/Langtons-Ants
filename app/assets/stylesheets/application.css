@@ -1,0 +1,111 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ @font-face {
+   font-family: akziItalic;
+   src: (AkzidenzGrotesk-LightCondItalic.otf);
+ }
+
+html,body  {
+  margin: 0;
+  padding: 0;
+}
+
+h3 {
+}
+
+p {
+  font-family: helvetica;
+}
+canvas {
+  margin: 0;
+  padding: 0;
+  /*z-index: -1;
+  position: absolute;*/
+}
+
+
+.slideout-menu {
+	position: absolute;
+	top: 0;
+	left: -250px;
+	width: 250px;
+	height: 100%;
+	background: #333;
+	z-index: 100;
+  opacity: .8;
+  color: white;
+}
+
+.slideout-menu-toggle {
+  display: block;
+  position: absolute;
+  opacity: .8;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 60px;
+  width: auto;
+  z-index: 3;
+}
+
+
+.slideout-menu-toggle:hover{
+  background: white;
+}
+.slideout-menu h3 {
+  font-family: helvetica;
+
+  opacity: 1;
+	position: relative;
+	padding: 12px 10px;
+	color: white;
+	font-size: 1.2em;
+	font-weight: 400;
+	border-bottom: 4px solid #222;
+}
+.slideout-menu .slideout-menu-close {
+	position: absolute;
+	top: 12px;
+	right: 10px;
+	display: inline-block;
+	padding: 6px 9px 5px;
+	font-family: Arial, sans-serif;
+	font-weight: bold;
+	line-height: 1;
+	background: #222;
+	color: #999;
+	text-decoration: none;
+	vertical-align: top;
+}
+.slideout-menu .slideout-menu-close:hover {
+	color: #fff;
+}
+
+.slideout-menu a {
+	position: relative;
+	/*display: block;*/
+	padding: 10px;
+	color: #999;
+	text-decoration: none;
+}
+.slideout-menu a:hover {
+	background: #000;
+	color: #fff;
+}
+.slideout-menu  a i {
+	position: absolute;
+	top: 15px;
+	right: 10px;
+	opacity: .5;
