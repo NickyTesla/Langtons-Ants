@@ -13,10 +13,7 @@
  *= require_tree .
  *= require_self
  */
- @font-face {
-   font-family: akziItalic;
-   src: (AkzidenzGrotesk-LightCondItalic.otf);
- }
+
 
 html,body  {
   margin: 0;
