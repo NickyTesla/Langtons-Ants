@@ -7,7 +7,7 @@ gem 'rails', '4.1.7'
 gem 'byebug'
 
 # Use sqlite3 as the database for Active Record
-gem 'pg'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
@@ -30,6 +30,7 @@ gem 'spring',        group: :development
 
 
 group :development, :test do
+  gem 'sqlite3'
   gem 'rspec-rails'
   gem 'factory_girl_rails'
   gem 'better_errors'
@@ -38,5 +39,6 @@ group :development, :test do
 end
 
 group :production do
+  gem 'pg'
   gem 'rails_12factor'
 end

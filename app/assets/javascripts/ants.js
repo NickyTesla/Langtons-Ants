@@ -76,7 +76,7 @@ Board.prototype.addCell = function(x,y,c, dir) {
   };
 
   var rgba = this.canvas.getImageData((x+swapX[dir]) * this.cellsize, (y+swapY[dir]) * this.cellsize, 1, 1).data;
-  var rgba2 = this.canvas.getImageData((x) * this.cellsize, y * this.cellsize, 1, 1).data;
+  var rgba2 = this.canvas.getImageData((x-swapX[dir]) * this.cellsize, (y-swapY[dir]) * this.cellsize, 1, 1).data;
   var r = rgba[0],
       g = rgba[1],
       b = rgba[2],
@@ -116,49 +116,49 @@ Board.prototype.draw = function() {
 Board.prototype.update = function(ant) {
 
   if (this.grid[ant.y][ant.x].visits % 9 === 0) {
+    this.addCell(ant.x, ant.y, 0, ant.dir);
 
       ant.dir = (ant.dir === 0) ? 3 : (ant.dir - 1)
-      this.addCell(ant.x, ant.y, 0, ant.dir);
 
   } else if (this.grid[ant.y][ant.x].visits % 9 ===1) {
+    this.addCell(ant.x, ant.y, 1, ant.dir);
 
       ant.dir = (ant.dir === 3) ? 0 : (ant.dir + 1);
-      this.addCell(ant.x, ant.y, 1, ant.dir);
 
   } else if (this.grid[ant.y][ant.x].visits % 9 ===2) {
+    this.addCell(ant.x, ant.y, 1, ant.dir);
 
     ant.dir = (ant.dir === 3) ? 0 : (ant.dir + 1);
-    this.addCell(ant.x, ant.y, 1, ant.dir);
 
   }else if (this.grid[ant.y][ant.x].visits % 9 ===3) {
+    this.addCell(ant.x, ant.y, 1, ant.dir);
 
     ant.dir = (ant.dir === 3) ? 0 : (ant.dir + 1);
-    this.addCell(ant.x, ant.y, 1, ant.dir);
 
   }else if (this.grid[ant.y][ant.x].visits % 9===4) {
+    this.addCell(ant.x, ant.y, 1, ant.dir);
 
     ant.dir = (ant.dir === 3) ? 0 : (ant.dir + 1);
-    this.addCell(ant.x, ant.y, 1, ant.dir);
 
   }else if (this.grid[ant.y][ant.x].visits % 9===5) {
+    this.addCell(ant.x, ant.y, 1, ant.dir);
 
     ant.dir = (ant.dir === 3) ? 0 : (ant.dir + 1);
-    this.addCell(ant.x, ant.y, 1, ant.dir);
 
   }else if (this.grid[ant.y][ant.x].visits % 9 ===6) {
+    this.addCell(ant.x, ant.y, 0, ant.dir);
 
       ant.dir = (ant.dir === 0) ? 3 : (ant.dir - 1)
-      this.addCell(ant.x, ant.y, 0, ant.dir);
 
   }else if (this.grid[ant.y][ant.x].visits % 9 ===7) {
+    this.addCell(ant.x, ant.y, 0, ant.dir);
 
       ant.dir = (ant.dir === 0) ? 3 : (ant.dir - 1)
-      this.addCell(ant.x, ant.y, 0, ant.dir);
 
   }else if (this.grid[ant.y][ant.x].visits % 9 ===8) {
-
-    ant.dir = (ant.dir === 3) ? 0 : (ant.dir + 1);
     this.addCell(ant.x, ant.y, 1, ant.dir);
+    ant.dir = (ant.dir === 3) ? 0 : (ant.dir + 1);
+
 
   }
 
