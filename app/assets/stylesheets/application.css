@@ -34,6 +34,10 @@ canvas {
   position: absolute;*/
 }
 
+audio {
+  display: none;
+}
+
 
 .slideout-menu {
   text-align: center;
