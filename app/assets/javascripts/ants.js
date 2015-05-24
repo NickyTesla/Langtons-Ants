@@ -75,8 +75,8 @@ Board.prototype.addCell = function(x,y,c, dir) {
     3: 0
   };
 
-  var rgba = this.canvas.getImageData((x+swapX[dir]) * this.cellsize, (y+swapY[dir]) * this.cellsize, 1, 1).data;
-  var rgba2 = this.canvas.getImageData((x-swapX[dir]) * this.cellsize, (y-swapY[dir]) * this.cellsize, 1, 1).data;
+  var rgba = this.canvas.getImageData((x+(swapX[dir]*2)) * this.cellsize, (y+(swapY[dir]*2)) * this.cellsize, 1, 1).data;
+  var rgba2 = this.canvas.getImageData((x-(swapX[dir]*2)) * this.cellsize, (y-(swapY[dir]*2)) * this.cellsize, 1, 1).data;
   var r = rgba[0],
       g = rgba[1],
       b = rgba[2],
@@ -90,8 +90,8 @@ Board.prototype.addCell = function(x,y,c, dir) {
   c = 'rgb('+r+','+g+','+b+')';
   c2 = 'rgb('+r2+','+g2+','+b2+')';
 
-  this.todraw.push([x-swapX[dir],y -swapY[dir],c]);
-  this.todraw.push([x + swapX[dir], y + swapY[dir], c2]);
+  this.todraw.push([x-(swapX[dir]*2),y -(swapY[dir]*2),c]);
+  this.todraw.push([x + (swapX[dir]*2), y + (swapY[dir]*2), c2]);
 }
 
 Board.prototype.addAnt = function(x,y,dir) {
