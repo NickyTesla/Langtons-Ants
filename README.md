@@ -1,5 +1,6 @@
 ## Ants in the Ointment
 
+antsintheointment.herokuapp.com
 
 A little experiment that uses a variation on the Langton's Ants Algorithm to create emergent patterns on a pixelated image.  
 
